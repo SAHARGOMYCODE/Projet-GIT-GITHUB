@@ -1,0 +1,164 @@
+ASUS@DESKTOP-ABV4PLL MINGW64 ~
+$ mkdir learn_git_again
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~
+$ cd learn_git_again
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again
+$ touch third.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again
+$ git init
+Initialized empty Git repository in C:/Users/ASUS/learn_git_again/.git/
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ add third.txt
+bash: add: command not found
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git add third.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git commit -m adding third.txt
+[master (root-commit) 9da57df] adding
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$  git log
+commit 9da57dfac9250b2ee0ceef6aca18e18fbb6f5f08 (HEAD -> master)
+Author: souroursahar2020 <sahar.kachoukh@gmail.com>
+Date:   Thu Sep 24 10:59:20 2020 +0200
+
+    adding
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ touch fourth.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git add fourth.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git commit -m "adding fourth.txt"
+[master d84e0fc] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git rm third.txt
+rm 'third.txt'
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git add -A
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git commit -m "removing third.txt"
+[master 79ad91e] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git log
+commit 79ad91ed258a8a021a4ee25f6e044ea59140bfec (HEAD -> master)
+Author: souroursahar2020 <sahar.kachoukh@gmail.com>
+Date:   Thu Sep 24 11:26:21 2020 +0200
+
+    removing third.txt
+
+commit d84e0fc2201b9e724f280e931e16c2bf48c98d37
+Author: souroursahar2020 <sahar.kachoukh@gmail.com>
+Date:   Thu Sep 24 11:14:19 2020 +0200
+
+    adding fourth.txt
+
+commit 9da57dfac9250b2ee0ceef6aca18e18fbb6f5f08
+Author: souroursahar2020 <sahar.kachoukh@gmail.com>
+Date:   Thu Sep 24 10:59:20 2020 +0200
+
+    adding
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ $ git config --global core.pager 'cat'
+bash: $: command not found
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git config --global core.pager 'cat '
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+user.email=sahar.kachoukh@gmail.com
+user.name=souroursahar2020
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$  git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+ASUS@DESKTOP-ABV4PLL MINGW64 ~/learn_git_again (master)
+$
